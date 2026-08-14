@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Saletalk Redmi 17 Series — Tài liệu học</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;700;800&family=Inter:wght@400;500;600&family=Roboto+Mono:wght@500;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#171314;
+    --cream:#FAF6EF;
+    --panel:#FFFFFF;
+    --navy:#111827;
+    --xiaomi:#FF6A00;
+    --xiaomi-deep:#E85D00;
+    --blue:#1652A3;
+    --green:#1E7F5C;
+    --green-bg:#E7F5EE;
+    --purple:#6B4FA0;
+    --purple-bg:#F1ECF9;
+    --red:#C0392B;
+    --gold:#B8860B;
+    --gold-bg:#FBF3DF;
+    --line:#E7E0D3;
+    --muted:#6B6459;
+  }
+  *{box-sizing:border-box;}
+  body{margin:0;background:var(--cream);color:var(--ink);font-family:'Inter',sans-serif;line-height:1.5;padding-bottom:70px;}
+  h1,h2,h3{font-family:'Be Vietnam Pro',sans-serif;}
+  .mono{font-family:'Roboto Mono',monospace;}
+
+  .hero{
+    background:linear-gradient(135deg,var(--navy) 0%, #1c2340 55%, var(--xiaomi-deep) 140%);
+    color:#fff; padding:36px 24px 28px; position:relative; overflow:hidden;
+  }
+  .hero::after{content:"";position:absolute;right:-60px;top:-60px;width:260px;height:260px;border-radius:50%;
+    background:radial-gradient(circle, rgba(255,106,0,.45), transparent 70%);}
+  .eyebrow{display:inline-block;font-family:'Roboto Mono',monospace;font-size:11px;letter-spacing:.14em;
+    text-transform:uppercase;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.25);
+    padding:5px 10px;border-radius:20px;margin-bottom:14px;}
+  .hero h1{font-size:28px;font-weight:800;margin:0 0 6px;letter-spacing:-.01em;position:relative;}
+  .hero p{margin:0;color:#D8DCEE;font-size:14px;max-width:640px;position:relative;}
+
+  .nav{position:sticky;top:0;z-index:40;background:rgba(250,246,239,.94);backdrop-filter:blur(6px);
+    border-bottom:1px solid var(--line);display:flex;gap:6px;padding:10px 16px;overflow-x:auto;}
+  .nav a{flex:none;text-decoration:none;color:var(--ink);font-size:13px;font-weight:600;
+    padding:8px 13px;border-radius:8px;white-space:nowrap;border:1px solid transparent;}
+  .nav a:hover{background:#fff;border-color:var(--line);}
+
+  .wrap{max-width:1120px;margin:0 auto;padding:0 20px;}
+  section{padding-top:34px;}
+  .sec-head{display:flex;align-items:baseline;gap:12px;margin-bottom:6px;}
+  .sec-head .tag{font-family:'Roboto Mono',monospace;font-size:11px;color:var(--xiaomi-deep);font-weight:700;letter-spacing:.08em;}
+  .sec-head h2{font-size:21px;margin:0;font-weight:800;}
+  .sec-note{font-size:12.5px;color:var(--muted);margin:0 0 16px;}
+
+  /* SPECS GRID */
+  .specs{display:grid;gap:12px;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));}
+  .spec-card{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:16px;}
+  .spec-card .lab{font-size:12.5px;color:var(--muted);font-weight:600;margin-bottom:4px;}
+  .spec-card .val{font-family:'Roboto Mono',monospace;font-weight:700;color:var(--xiaomi-deep);font-size:22px;line-height:1.2;}
+  .spec-card .sub{font-size:11.5px;color:var(--muted);margin-top:4px;}
+  .spec-card.feature{background:var(--navy);color:#fff;border-color:var(--navy);}
+  .spec-card.feature .lab{color:#B9BFDA;}
+  .spec-card.feature .val{color:var(--xiaomi);}
+
+  /* SALETALK STEPS */
+  .steps{display:grid;gap:14px;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));}
+  .step-card{background:#fff;border:1px solid var(--line);border-radius:14px;overflow:hidden;}
+  .step-head{display:flex;align-items:center;gap:10px;padding:14px 16px;border-bottom:1px solid var(--line);}
+  .step-num{width:26px;height:26px;border-radius:50%;background:var(--xiaomi);color:#fff;font-weight:800;
+    display:flex;align-items:center;justify-content:center;font-size:13px;flex:none;}
+  .step-title{font-weight:700;font-size:14.5px;}
+  .step-body{padding:14px 16px;}
+  .quote{background:var(--cream);border-left:3px solid var(--xiaomi);border-radius:0 10px 10px 0;
+    padding:11px 13px;font-size:13px;font-style:italic;color:#3A3530;}
+  .qlist{margin:0;padding-left:0;list-style:none;display:flex;flex-direction:column;gap:9px;}
+  .qlist li{background:var(--cream);border-radius:9px;padding:9px 11px;font-size:12.8px;}
+  .qlist b{color:var(--xiaomi-deep);}
+
+  .seg{border-radius:10px;padding:11px 13px;margin-bottom:9px;border-left:3px solid;}
+  .seg:last-child{margin-bottom:0;}
+  .seg .seg-title{font-weight:700;font-size:12.8px;margin-bottom:5px;}
+  .seg .seg-arrow{font-size:12px;color:var(--muted);}
+  .seg.g1{background:#EEF3FB;border-color:var(--blue);} .seg.g1 .seg-title{color:var(--blue);}
+  .seg.g2{background:var(--green-bg);border-color:var(--green);} .seg.g2 .seg-title{color:var(--green);}
+  .seg.g3{background:var(--purple-bg);border-color:var(--purple);} .seg.g3 .seg-title{color:var(--purple);}
+
+  /* FABE TABLE */
+  .fabe-wrap{display:flex;flex-direction:column;gap:16px;}
+  .fabe-card{background:#fff;border:1px solid var(--line);border-radius:14px;overflow:hidden;}
+  .fabe-title-row{display:flex;align-items:center;gap:12px;padding:14px 16px;background:var(--navy);color:#fff;}
+  .fabe-title-row .ft{font-weight:800;font-size:15px;}
+  .fabe-title-row .fs{font-family:'Roboto Mono',monospace;font-size:11.5px;color:#B9BFDA;}
+  .fabe-grid{display:grid;grid-template-columns:1fr;}
+  @media(min-width:820px){ .fabe-grid{grid-template-columns:repeat(4,1fr);} }
+  .fabe-col{padding:14px 16px;border-top:1px solid var(--line);}
+  @media(min-width:820px){ .fabe-col{border-top:none;border-left:1px solid var(--line);} .fabe-col:first-child{border-left:none;} }
+  .fabe-col .fk{display:inline-block;font-family:'Roboto Mono',monospace;font-weight:800;font-size:11px;
+    padding:2px 8px;border-radius:5px;color:#fff;margin-bottom:8px;}
+  .fabe-col.F .fk{background:var(--blue);} .fabe-col.A .fk{background:var(--green);}
+  .fabe-col.B .fk{background:var(--gold);} .fabe-col.E .fk{background:var(--purple);}
+  .fabe-col p{margin:0 0 4px;font-size:12.6px;}
+  .fabe-col ul{margin:0;padding-left:16px;font-size:12.6px;}
+  .fabe-col ul li{margin-bottom:4px;}
+
+  /* WARRANTY */
+  .warr-grid{display:grid;gap:14px;grid-template-columns:1fr;}
+  @media(min-width:900px){ .warr-grid{grid-template-columns:280px 1fr;} }
+  .contact-card{background:var(--purple-bg);border:1px solid #DED0F0;border-radius:14px;padding:18px;}
+  .contact-card .hotline{font-family:'Roboto Mono',monospace;font-weight:800;font-size:22px;color:var(--purple);margin:4px 0;}
+  .contact-card ul{margin:8px 0 0;padding-left:18px;font-size:12.6px;color:#4a4356;}
+  .promo-box{background:linear-gradient(135deg,#FFF3E8,#FFE6D2);border:1px solid #F4C79B;border-radius:14px;padding:16px 18px;}
+  .promo-box .period{font-family:'Roboto Mono',monospace;font-size:11.5px;color:var(--xiaomi-deep);font-weight:700;margin-bottom:10px;}
+  .promo-box ul{margin:0;padding-left:0;list-style:none;display:flex;flex-direction:column;gap:8px;}
+  .promo-box li{font-size:13px;padding-left:22px;position:relative;}
+  .promo-box li::before{content:"✓";position:absolute;left:0;color:var(--green);font-weight:800;}
+  .outside-box{background:#fff;border:1px dashed var(--line);border-radius:14px;padding:16px 18px;margin-top:12px;}
+  .outside-box .lab{font-family:'Roboto Mono',monospace;font-size:11px;color:var(--muted);margin-bottom:8px;}
+  .outside-box ul{margin:0;padding-left:0;list-style:none;display:flex;flex-direction:column;gap:7px;}
+  .outside-box li{font-size:12.8px;padding-left:20px;position:relative;}
+  .outside-box li::before{content:"✓";position:absolute;left:0;color:var(--muted);}
+  .improve{background:var(--green-bg);border-radius:10px;padding:12px 14px;margin-top:12px;font-size:12.8px;color:var(--green);font-weight:600;}
+  .footnotes{margin-top:14px;background:#fff;border:1px solid var(--line);border-radius:10px;padding:12px 14px;}
+  .footnotes p{margin:0 0 6px;font-size:11.5px;color:var(--muted);}
+  .footnotes p:last-child{margin-bottom:0;}
+
+  .foot{max-width:1120px;margin:40px auto 0;padding:16px 20px;border-top:1px solid var(--line);
+    font-size:11.5px;color:var(--muted);text-align:center;}
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <div class="wrap">
+    <span class="eyebrow">Tài liệu học · PC · Saletalk</span>
+    <h1>Redmi 17 Series — Hướng dẫn tư vấn</h1>
+    <p>Siêu pin khủng · Màn lớn mượt mà · Thiết kế nổi bật. Bản tóm tắt trực quan: thông số nổi bật, kịch bản tư vấn, bảng F.A.B.E và chính sách bảo hành.</p>
+  </div>
+</div>
+
+<div class="nav">
+  <a href="#specs">1. Thông số nổi bật</a>
+  <a href="#saletalk">2. Hướng dẫn tư vấn</a>
+  <a href="#fabe">3. Bảng F.A.B.E</a>
+  <a href="#baohanh">4. Chính sách bảo hành</a>
+</div>
+
+<div class="wrap">
+
+  <!-- SECTION 1: SPECS -->
+  <section id="specs">
+    <div class="sec-head"><span class="tag">PHẦN 1</span><h2>Thông số nổi bật</h2></div>
+    <p class="sec-note">REDMI 17 — Đẹp bứt phá, pin bền bỉ.</p>
+    <div class="specs">
+      <div class="spec-card"><div class="lab">Màn hình lớn</div><div class="val">6.9"</div></div>
+      <div class="spec-card feature"><div class="lab">Hệ điều hành</div><div class="val">Xiaomi HyperOS 3</div></div>
+      <div class="spec-card"><div class="lab">Tần số quét</div><div class="val">120Hz</div></div>
+      <div class="spec-card"><div class="lab">Pin siêu khủng</div><div class="val">7500mAh</div></div>
+      <div class="spec-card"><div class="lab">Hỗ trợ sạc nhanh</div><div class="val">45W</div></div>
+      <div class="spec-card"><div class="lab">Camera AI kép</div><div class="val">50MP</div><div class="sub">Bộ công cụ chỉnh ảnh AI</div></div>
+      <div class="spec-card"><div class="lab">Thiết kế mới nổi bật</div><div class="val">Đèn LED RGB</div><div class="sub">Camera, cử chỉ, cuộc gọi, thông báo — tuỳ chỉnh màu</div></div>
+      <div class="spec-card"><div class="lab">Vi xử lý</div><div class="val" style="font-size:15px;">4nm Snapdragon 4 Gen 5</div><div class="sub">Trên bản 5G · Mediatek Helio G91-Ultra trên bản 4G</div></div>
+    </div>
+  </section>
+
+  <!-- SECTION 2: SALETALK -->
+  <section id="saletalk">
+    <div class="sec-head"><span class="tag">PHẦN 2</span><h2>Hướng dẫn tư vấn (Saletalk)</h2></div>
+    <p class="sec-note">3 bước: Câu hook mở đầu → Tìm hiểu nhu cầu → Phân loại nhu cầu để tư vấn đúng trọng tâm.</p>
+    <div class="steps">
+      <div class="step-card">
+        <div class="step-head"><div class="step-num">1</div><div class="step-title">Câu hook</div></div>
+        <div class="step-body">
+          <div class="quote">"Mời anh chị trải nghiệm REDMI 17 mới ra mắt với pin khủng 7500mAh & gói hậu mãi hàng đầu"</div>
+        </div>
+      </div>
+      <div class="step-card">
+        <div class="step-head"><div class="step-num">2</div><div class="step-title">Tìm hiểu nhu cầu</div></div>
+        <div class="step-body">
+          <ul class="qlist">
+            <li>Anh/Chị thường dùng máy với nhu cầu chính là gì ạ? (<b>Chụp ảnh / game / giải trí / làm việc</b>)</li>
+            <li>Tần suất sử dụng máy của Anh/Chị <b>gần như cả ngày</b> và phải sạc nhiều phải không ạ?</li>
+            <li>Anh/Chị cũng ưu tiên máy <b>bền/ít rủi ro</b> và <b>hậu mãi tốt</b> phải không ạ?</li>
+          </ul>
+        </div>
+      </div>
+      <div class="step-card">
+        <div class="step-head"><div class="step-num">3</div><div class="step-title">Phân loại nhu cầu</div></div>
+        <div class="step-body">
+          <div class="seg g1">
+            <div class="seg-title">Nhu cầu GIẢI TRÍ / LÀM VIỆC</div>
+            <div class="seg-arrow">→ Màn hình 6.9" + 120Hz + Gorilla Glass 7i</div>
+          </div>
+          <div class="seg g2">
+            <div class="seg-title">Nhu cầu PIN TRÂU</div>
+            <div class="seg-arrow">→ Pin khủng 7500mAh + Sạc 45W</div>
+          </div>
+          <div class="seg g3">
+            <div class="seg-title">Nhu cầu THIẾT KẾ NỔI BẬT</div>
+            <div class="seg-arrow">→ Đèn LED RGB động + Thiết kế hoàn toàn mới</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 3: FABE -->
+  <section id="fabe">
+    <div class="sec-head"><span class="tag">PHẦN 3</span><h2>Bảng F.A.B.E — 3 tính năng trọng tâm</h2></div>
+    <p class="sec-note"><b style="color:var(--blue)">F</b>: Tính năng · <b style="color:var(--green)">A</b>: Ưu thế · <b style="color:var(--gold)">B</b>: Lợi ích · <b style="color:var(--purple)">E</b>: Demo cho khách xem</p>
+    <div class="fabe-wrap">
+
+      <div class="fabe-card">
+        <div class="fabe-title-row"><span class="ft">Siêu Pin 7500mAh</span><span class="fs">1/3</span></div>
+        <div class="fabe-grid">
+          <div class="fabe-col F"><span class="fk">F — Tính năng</span>
+            <p>Pin siêu khủng 7500mAh, sạc nhanh 45W, sạc ngược 22.5W</p>
+          </div>
+          <div class="fabe-col A"><span class="fk">A — Ưu thế</span>
+            <p>Dung lượng pin lớn nhất từ trước đến nay trên dòng Redmi</p>
+          </div>
+          <div class="fabe-col B"><span class="fk">B — Lợi ích</span>
+            <ul>
+              <li>Yên tâm sử dụng suốt ngày dài cho các tác vụ quen thuộc</li>
+              <li>Thời lượng sử dụng lên đến 1.88 ngày</li>
+              <li>Sạc 45W giúp rút ngắn thời gian chờ sạc</li>
+            </ul>
+          </div>
+          <div class="fabe-col E"><span class="fk">E — Demo</span>
+            <p>Mở cài đặt Pin/Sạc cho khách xem thời lượng và các tính năng pin nâng cao.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="fabe-card">
+        <div class="fabe-title-row"><span class="ft">Màn hình 6.9" 120Hz</span><span class="fs">2/3</span></div>
+        <div class="fabe-grid">
+          <div class="fabe-col F"><span class="fk">F — Tính năng</span>
+            <p>Màn hình lớn 6.9", 120Hz, Gorilla Glass 7i, IP64, cảm ứng kháng nước 2.0</p>
+          </div>
+          <div class="fabe-col A"><span class="fk">A — Ưu thế</span>
+            <p>Màn hình lớn và mượt mà nhất phân khúc</p>
+          </div>
+          <div class="fabe-col B"><span class="fk">B — Lợi ích</span>
+            <ul>
+              <li>Không gian hiển thị rộng rãi, trải nghiệm vuốt chạm mượt mà</li>
+              <li>Tăng khả năng chống trầy xước và độ bền màn hình</li>
+              <li>Giúp an tâm khi sử dụng trong tình huống tay ướt, mưa nhẹ...</li>
+            </ul>
+          </div>
+          <div class="fabe-col E"><span class="fk">E — Demo</span>
+            <p>Mở Youtube → tìm video "4K" cho khách xem. Vào cài đặt → đổi tốc độ làm mới để cảm nhận độ mượt.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="fabe-card">
+        <div class="fabe-title-row"><span class="ft">LED RGB nổi bật</span><span class="fs">3/3</span></div>
+        <div class="fabe-grid">
+          <div class="fabe-col F"><span class="fk">F — Tính năng</span>
+            <p>Thiết kế mới, đèn LED RGB, 8 chế độ màu tuỳ chỉnh</p>
+          </div>
+          <div class="fabe-col A"><span class="fk">A — Ưu thế</span>
+            <p>Thiết kế mới, độc đáo trong phân khúc</p>
+          </div>
+          <div class="fabe-col B"><span class="fk">B — Lợi ích</span>
+            <ul>
+              <li>Cá nhân hoá điện thoại</li>
+              <li>Quản lý thông báo tốt hơn</li>
+              <li>Thiết kế hoàn thiện, tinh tế và dễ cầm nắm</li>
+            </ul>
+          </div>
+          <div class="fabe-col E"><span class="fk">E — Demo</span>
+            <p>Vào cài đặt bổ sung → Hiệu ứng ánh sáng nền. Cho khách xem và trải nghiệm đèn LED.</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- SECTION 4: WARRANTY -->
+  <section id="baohanh">
+    <div class="sec-head"><span class="tag">PHẦN 4</span><h2>Chính sách bảo hành — Bảo hành vô đối, chất lượng dẫn lối</h2></div>
+    <div class="warr-grid">
+      <div class="contact-card">
+        <div style="font-weight:700;font-size:13px;color:var(--purple);">LIÊN HỆ</div>
+        <div class="hotline">1800 400 410</div>
+        <div style="font-size:11.5px;color:var(--muted);">Hotline · Mi Support</div>
+        <ul>
+          <li><b>93</b> trung tâm dịch vụ</li>
+          <li>28 Phone / Eco</li>
+          <li>65 TV, máy lạnh, tủ lạnh, máy giặt</li>
+        </ul>
+      </div>
+
+      <div>
+        <div class="promo-box">
+          <div class="period">Trong tháng mở bán: 07/08/2026 – 30/09/2026</div>
+          <ul>
+            <li>3 năm thay pin miễn phí nếu mua trong tháng mở bán (1 lần) <sup>(1)</sup></li>
+            <li>2 năm bảo hành màn hình nếu mua trong tháng mở bán (1 lần) <sup>(2)</sup></li>
+            <li>2 năm bảo hành kính bảo vệ camera sau hoặc nắp lưng nếu mua trong tháng mở bán (1 lần) <sup>(3)</sup></li>
+            <li>2 năm bảo hành tiêu chuẩn nếu mua trong tháng mở bán</li>
+            <li>1 đổi 1 trong 30 ngày</li>
+          </ul>
+        </div>
+
+        <div class="outside-box">
+          <div class="lab">NGOÀI THÁNG MỞ BÁN</div>
+          <ul>
+            <li>18 tháng bảo hành tiêu chuẩn</li>
+            <li>1 đổi 1 trong 30 ngày</li>
+          </ul>
+        </div>
+
+        <div class="improve">★ Cải tiến trong chính sách: Khách hàng không phải trả phí 230.000đ công thay khi sử dụng gói bảo hành rơi vỡ/nắp lưng.</div>
+
+        <div class="footnotes">
+          <p><b>(1)</b> 1 lần thay pin miễn phí trong vòng 3 năm kể từ ngày mua (dung lượng pin &lt;80%)</p>
+          <p><b>(2)</b> 2 năm bảo hành màn hình nếu mua trong tháng mở bán (1 lần): chỉ áp dụng cho các trường hợp tác động vật lý</p>
+          <p><b>(3)</b> 2 năm bảo hành kính bảo vệ camera sau hoặc nắp lưng nếu mua trong tháng mở bán (1 lần): khách hàng cần chọn thay kính bảo vệ camera sau HOẶC nắp lưng</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</div>
+
+<div class="foot">Tài liệu nội bộ dùng để đào tạo PC · Saletalk Redmi 17 Series</div>
+
+</body>
+</html>
